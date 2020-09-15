@@ -4,7 +4,7 @@
 > recipes available offline. Make you life easier by using better the ingredients
 > you already have.
 
-Also available in: [🇧🇷](README.pt.md)
+Also available in: [🇧🇷](README-pt.md)
 
 
 # The app
