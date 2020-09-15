@@ -1,20 +1,22 @@
 # homemade recipes/feita em casa
 
-> Landing page for the homemade recipes/feita em casa app.
-> Check translations.
-
-# The app
-
-<a href='https://play.google.com/store/apps/details?id=br.com.feitaemcasa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-  <img width="120px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
-</a>
-
 > An app where you search recipes by ingredient or name, make your favourite
 > recipes available offline. Make you life easier by using better the ingredients
 > you already have.
 
 Also available in: [🇧🇷](README.pt.md)
 
+
+# The app
+
+<a href='https://play.google.com/store/apps/details?id=br.com.feitaemcasa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+  <img width="160px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+</a>
+<p>
+	<a href="https://apps.apple.com/us/app/feita-em-casa/id1529540506?mt=8">
+	    <img width="140px" alt="Get it on App Store" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-08-28&kind=iossoftware&bubble=ios_apps"/>
+	</a>
+  
 
 ## This repo
 
