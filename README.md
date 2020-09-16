@@ -11,12 +11,12 @@ Also available in: [🇧🇷](README-pt.md)
 
 <p>
 <a href='https://play.google.com/store/apps/details?id=br.com.feitaemcasa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-  <img width="160px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+  <img width="140px" alt='Get it on Google Play' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png'/>
 </a>
 </p>
 <p>
 <a href="https://apps.apple.com/us/app/feita-em-casa/id1529540506?mt=8">
-  <img width="140px" style="padding: 20px" alt="Get it on App Store" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-08-28&kind=iossoftware&bubble=ios_apps"/>
+  <img width="140px" alt="Get it on App Store" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-08-28&kind=iossoftware&bubble=ios_apps"/>
 </a>
 </p>
 
