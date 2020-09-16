@@ -19,7 +19,7 @@ Also available in: [🇧🇷](README-pt.md)
 
 ## This repo
 
-This is the repo for the Homemade recipes android app, here you can open issues on bugs
+This is the repo for the Homemade recipes app, here you can open issues on bugs
 you found in the app, or give a suggestion on what the app should have in a next
 version.
 
@@ -28,3 +28,5 @@ version.
 
 Thank you for choosing this app, by using it you create a more efficient way of
 cooking, you waste less and colaborate with the quarantine period.
+
+Special thanks to [nagano](https://github.com/nagano) for the great design.
