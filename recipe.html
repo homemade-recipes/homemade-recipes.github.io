@@ -22,15 +22,38 @@
       <a href="index.html"><button>Voltar</button></a>
     </nav>
 
+    <img id="banner" class="banner" src="" />
     <div id="recipe"></div>
 
     <script>
       let recipe = document.getElementById("recipe");
+      let banner = document.getElementById("banner");
       const data = JSON.parse(decodeURI(document.location.search.substr(6)));
-      recipe.innerHTML = `<h1>Title</h1>
-        <p>${data.Title}</p>
+
+      banner.src = data.Picture;
+
+      recipe.innerHTML = `<h1>${data.Title}</h1>
         <h2>Author</h2>
-        <p>${data.Author}</p>`;
+        <p>${data.Author}</p>
+        <h2>Ingredients</h2>
+        <ul>
+        ${data.Ingredients.map((i) => "<li>" + i + "</li>").join("\n")}
+        </ul>
+        <h2>Instructions</h2>
+        <ul>
+        ${data.Instructions.map((i) => "<li>" + i + "</li>").join("\n")}
+        </ul>
+      `;
+
+      if (data.Notes.length > 0) {
+        recipe.innerHTML += `<h2>Notes</h2>
+          <ul>
+            ${data.Notes.map((n) => "<li>" + n + "</li>").join("\n")}
+        </ul>`;
+      }
+      recipe.innerHTML += `<h2>Source</h2>
+      <p>${data.Source}</p>
+      `;
     </script>
   </body>
 </html>
