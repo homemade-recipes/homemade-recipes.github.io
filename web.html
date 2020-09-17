@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt">
-	<head>
-		<link rel="stylesheet" href="main.css"/>
-		<title>Feita em casa</title>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <title>Feita em casa</title>
 
-		<meta charset="UTF-8" />
-		<meta name="language" content="portuguese" />
-		<meta name="author" content="Brian Lee Mayer">
-		<meta name="description" content="Feita em casa é o app ideal para você encontrar sua receita"/>
-		<meta name="keywords" content="app, feita em casa, android, iOS, receita, busca"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	</head>
-	<body>
-		<nav>
-			<a href="index.html">Home</a>
-			<a href="hints.html">Dicas</a>
-			<a href="web.html"><button>Versão Web</button></a>
-		</nav>
+    <meta charset="UTF-8" />
+    <meta name="language" content="portuguese" />
+    <meta name="author" content="Brian Lee Mayer" />
+    <meta
+      name="description"
+      content="Feita em casa é o app ideal para você encontrar sua receita"
+    />
+    <meta
+      name="keywords"
+      content="app, feita em casa, android, iOS, receita, busca"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html"><button>Voltar</button></a>
+    </nav>
 
-		<footer>
-			<p>
-			Esta página feita por Brian Mayer está licenciada sob <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
-			</p>
-			<p>
-			<img style="height:22px" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"/>
-			<img style="height:22px" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"/>
-			</p>
-		</footer>
-	</body>
+    <section id="list"></section>
+
+    <footer>
+      <p>
+        Esta página feita por Brian Mayer está licenciada sob
+        <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+      </p>
+      <p>
+        <img
+          style="height: 22px"
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+        />
+        <img
+          style="height: 22px"
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+        />
+      </p>
+    </footer>
+
+    <script>
+      const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
+
+      fetch(url + "?locale=" + navigator.language + "&mostvisited")
+        .then((res) => res.json())
+        .then((recipes) => {
+          let list = document.getElementById("list");
+          for (let i = 0; i < recipes.length; i++) {
+            console.log(recipes[i]);
+
+            // Create recipe element
+            const p = document.createElement("p");
+            var title = document.createTextNode(recipes[i].title);
+            p.appendChild(title);
+
+            // Add recipe
+            list.appendChild(p);
+          }
+        });
+    </script>
+  </body>
 </html>
