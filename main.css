@@ -48,6 +48,16 @@ section.main {
   margin: 0 60px;
 }
 
+desc {
+  margin-left: 120px;
+  display: block;
+}
+
+img.recipe {
+  width: 100px;
+  float: left;
+}
+
 footer {
   margin: 0 100px;
   position: absolute;
