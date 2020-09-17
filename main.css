@@ -1,48 +1,55 @@
-html, body {
-	max-width: 800px;
-	margin: 0 auto;
-	font-family: sans, sans-serif;
+html,
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans, sans-serif;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 nav {
-	background-color: #e52567;
-	font-size: large;
+  background-color: #e52567;
+  font-size: large;
 }
 
 nav > a {
-	margin: 0 20px;
-	color: white;
-	text-align: center;
-	text-decoration: none;
+  margin: 0 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
 button {
-	color: white;
-	margin: 7px;
-	padding: 10px 16px;
-	background-color: #154ac6;
-	border: 2px solid white;
-	border-radius: 7px;
+  color: white;
+  margin: 7px;
+  padding: 10px 16px;
+  background-color: #154ac6;
+  border: 2px solid white;
+  border-radius: 7px;
 }
 
 .banner {
-	width: 100%;
-	max-width: 800px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search {
+  float: center;
 }
 
 section.main {
-	margin: 0 20px;
-	float: center;
+  margin: 0 20px;
+  float: center;
+}
 
-
+#list {
+  margin: 0 60px;
 }
 
 footer {
-	margin: 0 50px;
-	position: absolute;
-	bottom: 0;
+  margin: 0 100px;
+  position: absolute;
+  bottom: 0;
 }
