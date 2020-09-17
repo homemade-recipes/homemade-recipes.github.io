@@ -1,0 +1,48 @@
+html, body {
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: sans, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav {
+	background-color: #e52567;
+	font-size: large;
+}
+
+nav > a {
+	margin: 0 20px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+button {
+	color: white;
+	margin: 7px;
+	padding: 10px 16px;
+	background-color: #154ac6;
+	border: 2px solid white;
+	border-radius: 7px;
+}
+
+.banner {
+	width: 100%;
+	max-width: 800px;
+}
+
+section.main {
+	margin: 0 20px;
+	float: center;
+
+
+}
+
+footer {
+	margin: 0 50px;
+	position: absolute;
+	bottom: 0;
+}
