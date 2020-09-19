@@ -23,11 +23,12 @@ nav > a {
 
 button {
   color: white;
-  margin: 7px;
-  padding: 10px 16px;
-  background-color: #154ac6;
-  border: 2px solid white;
-  border-radius: 7px;
+  font-weight: bold;
+  width: 140px;
+  padding: 11px 16px;
+  background-color: black;
+  border: 1px solid gray;
+  border-radius: 6px;
 }
 
 .banner {
@@ -36,12 +37,14 @@ button {
 }
 
 .search {
-  float: center;
+  flex: center;
+  align-content: space-between;
 }
 
 section.main {
   margin: 0 20px;
-  float: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 #list {
@@ -56,10 +59,4 @@ desc {
 img.recipe {
   width: 100px;
   float: left;
-}
-
-footer {
-  margin: 0 100px;
-  position: absolute;
-  bottom: 0;
 }
