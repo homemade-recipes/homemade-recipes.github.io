@@ -37,8 +37,10 @@ button {
 }
 
 .search {
-  flex: center;
-  align-content: space-between;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.main {
@@ -48,7 +50,8 @@ section.main {
 }
 
 #list {
-  margin: 0 60px;
+  display: block;
+  margin: 100px 60px;
 }
 
 desc {
