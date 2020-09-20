@@ -19,34 +19,56 @@
   </head>
   <body>
     <div class="search">
-      <form id="form">
-        <input type="text" placeholder="Buscar" id="search" />
+      <div>
+        <input
+          type="text"
+          placeholder="Buscar"
+          id="search"
+          onsubmit="searchTerm();"
+        />
         <input type="button" value="Buscar" onclick="searchTerm();" />
-      </form>
+      </div>
+      <p>
+        <input checked type="radio" name="type" />
+        <label for="byingredient">Por ingrediente</label>
+        <input type="radio" name="type" />
+        <label for="byname">Por nome</label>
+      </p>
     </div>
 
     <ul id="list"></ul>
 
     <script>
-      document.getElementById("form").onsubmit = searchTerm;
       const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
       let list = document.getElementById("list");
 
       function recipe(r) {
-        return `<li>
-          <a href="recipe.html?data=${encodeURI(JSON.stringify(r))}">${
+        return `<li class="list">
+          <div>
+            <img class="list" src="${r.Picture}"/>
+            <a href="recipe.html?data=${encodeURI(JSON.stringify(r))}">${
           r.Title
-        }</a><br>${r.Author}<br>
+        }</a>
+            <div>
+              Por: ${r.Author}
+            </div>
+            <div>
+              Em: ${r.Category}
+            </div>
+          </div>
         </li>`;
       }
 
       function searchTerm() {
-        console.log("searching");
+        // Check search type
+        const radioButtons = document.getElementsByName("type");
+        const type = radioButtons[0].checked ? "ingredient" : "name";
+
         list.innerHTML = "";
 
         const term = document.getElementById("search").value;
-        console.log(term);
-        fetch(url + "?locale=" + navigator.language + "&name=" + term)
+        console.log(`searching ${type} ${term}`);
+        fetch(`${url}?locale=${navigator.language}&${type}=${term}`)
           .then((res) => res.json())
           .then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
         return true;
@@ -209,6 +231,7 @@
       //     Visits: 0,
       //   },
       // ];
+      // list.innerHTML = r.map((r) => recipe(r)).join("\n");
 
       fetch(url + "?locale=" + navigator.language + "&mostvisited")
         .then((res) => res.json())
