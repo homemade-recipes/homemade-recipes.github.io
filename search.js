@@ -1,9 +1,9 @@
 const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
 
 function recipe(lang, r) {
-	const by = lang == "en": "By" : "Por";
-	const on = lang == "en": "In" : "Em";
-	const suffix = lang == "en" : "" : "-pt";
+	const by = lang == "en" ? "By" : "Por";
+	const on = lang == "en" ? "In" : "Em";
+	const suffix = lang == "en" ? "" : "-pt";
 	return `<li class="list">
 	  <div>
 	    <img class="list" src="${r.Picture}"/>
