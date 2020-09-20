@@ -1,5 +1,4 @@
 const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
-var list = document.getElementById("list");
 
 function recipe(r) {
 	return `<li class="list">
@@ -18,11 +17,19 @@ function recipe(r) {
 	</li>`;
 }
 
+function getMostSeen() {
+	let list = document.getElementById("list");
+	fetch(url + "?locale=" + navigator.language + "&mostvisited")
+	.then((res) => res.json())
+	.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
+}
+
 function searchTerm() {
 	// Check search type
 	const radioButtons = document.getElementsByName("type");
 	const type = radioButtons[0].checked ? "ingredients" : "name";
 
+	let list = document.getElementById("list");
 	list.innerHTML = "";
 
 	const term = document.getElementById("search").value;
@@ -32,6 +39,8 @@ function searchTerm() {
 		.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
 	return true;
 }
+
+window.onload = getMostSeen;
 
 // For testing
 // const r = [
@@ -191,8 +200,4 @@ function searchTerm() {
 //   },
 // ];
 // list.innerHTML = r.map((r) => recipe(r)).join("\n");
-
-fetch(url + "?locale=" + navigator.language + "&mostvisited")
-.then((res) => res.json())
-.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
 
