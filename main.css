@@ -43,6 +43,24 @@ button {
   align-items: center;
 }
 
+input[type="text"] {
+  width: 300px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border-width: 1px;
+}
+
+input[type="button"] {
+  background-color: #e52567;
+  color: white;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border-width: 1px;
+  border-color: #e52567;  
+}
+
 section.main {
   margin: 0 20px;
   display: flex;
