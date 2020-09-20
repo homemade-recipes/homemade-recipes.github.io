@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <title>Feita em casa</title>
+
+    <meta charset="UTF-8" />
+    <meta name="language" content="portuguese" />
+    <meta name="author" content="Brian Lee Mayer" />
+    <meta
+      name="description"
+      content="Feita em casa é o app ideal para você encontrar sua receita"
+    />
+    <meta
+      name="keywords"
+      content="app, feita em casa, android, iOS, receita, busca"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="search.js"></script>
+  </head>
+  <body>
+    <div class="search">
+      <form>
+        <input
+          type="text"
+          placeholder="Buscar"
+          id="search"
+          onsubmit="searchTerm();"
+        />
+        <input type="button" value="Buscar" onclick="searchTerm();" />
+      </form>
+      <p>
+        <input checked type="radio" name="type" />
+        <label for="byingredient">Por ingrediente</label>
+        <input type="radio" name="type" />
+        <label for="byname">Por nome</label>
+      </p>
+    </div>
+
+    <ul id="list"></ul>
+
+  </body>
+</html>
