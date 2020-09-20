@@ -3,10 +3,11 @@ const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
 function recipe(lang, r) {
 	const by = lang == "en": "By" : "Por";
 	const on = lang == "en": "In" : "Em";
+	const suffix = lang == "en" : "" : "-pt";
 	return `<li class="list">
 	  <div>
 	    <img class="list" src="${r.Picture}"/>
-	    <a href="recipe.html?data=${encodeURI(JSON.stringify(r))}">${
+	    <a href="recipe${suffix}.html?data=${encodeURI(JSON.stringify(r))}">${
 		    r.Title
 	    }</a>
 	    <div>
@@ -19,12 +20,12 @@ function recipe(lang, r) {
 	</li>`;
 }
 
-function getMostSeen(lan) {
+function getMostSeen(lang) {
 	let list = document.getElementById("list");
 	
 	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
-	.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
+	.then((r) => (list.innerHTML = r.map((r) => recipe(lang, r)).join("\n")));
 }
 
 function searchTerm(lang) {
@@ -39,7 +40,7 @@ function searchTerm(lang) {
 	console.log(`searching ${type} ${term}`);
 	fetch(`${url}?locale=${lang}&${type}=${term}`)
 		.then((res) => res.json())
-		.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
+		.then((r) => (list.innerHTML = r.map((r) => recipe(lang, r)).join("\n")));
 	return true;
 }
 
