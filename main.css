@@ -37,8 +37,8 @@ button {
 }
 
 .search {
-  margin: 30px auto;
-  display: flex;
+  margin: 60px auto;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -52,13 +52,14 @@ input[type="text"] {
 }
 
 input[type="button"] {
+  width: fit-content;
   background-color: #e52567;
   color: white;
   padding: 6px 12px;
   box-sizing: border-box;
   border-radius: 16px;
   border-width: 1px;
-  border-color: #e52567;  
+  border-color: #e52567;
 }
 
 section.main {
@@ -68,8 +69,13 @@ section.main {
 }
 
 #list {
+  list-style-type: none;
   display: block;
-  margin: 100px 60px;
+}
+
+li.list {
+  display: flex;
+  padding-bottom: 30px;
 }
 
 desc {
@@ -80,4 +86,10 @@ desc {
 img.recipe {
   width: 100px;
   float: left;
+}
+
+img.list {
+  width: 100px;
+  float: left;
+  margin-right: 20px;
 }
