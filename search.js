@@ -1,5 +1,5 @@
 const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
-let list = document.getElementById("list");
+var list = document.getElementById("list");
 
 function recipe(r) {
 	return `<li class="list">
