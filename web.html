@@ -26,7 +26,7 @@
           type="text"
           placeholder="Search"
           id="search"
-          onsubmit="searchTerm();"
+          onsubmit="searchTerm('en');"
         />
         <input type="button" value="Search" onclick="searchTerm();" />
       </form>
@@ -40,5 +40,8 @@
 
     <ul id="list"></ul>
 
+    <script>
+      getMostSeen("en");
+    </script>
   </body>
 </html>

@@ -1,6 +1,8 @@
 const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
 
-function recipe(r) {
+function recipe(lang, r) {
+	const by = lang == "en": "By" : "Por";
+	const on = lang == "en": "In" : "Em";
 	return `<li class="list">
 	  <div>
 	    <img class="list" src="${r.Picture}"/>
@@ -8,23 +10,24 @@ function recipe(r) {
 		    r.Title
 	    }</a>
 	    <div>
-	      Por: ${r.Author}
+	      ${by}: ${r.Author}
 	    </div>
 	    <div>
-	      Em: ${r.Category}
+	      ${on}: ${r.Category}
 	    </div>
 	  </div>
 	</li>`;
 }
 
-function getMostSeen() {
+function getMostSeen(lan) {
 	let list = document.getElementById("list");
-	fetch(url + "?locale=" + navigator.language + "&mostvisited")
+	
+	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
 	.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
 }
 
-function searchTerm() {
+function searchTerm(lang) {
 	// Check search type
 	const radioButtons = document.getElementsByName("type");
 	const type = radioButtons[0].checked ? "ingredients" : "name";
@@ -34,13 +37,11 @@ function searchTerm() {
 
 	const term = document.getElementById("search").value;
 	console.log(`searching ${type} ${term}`);
-	fetch(`${url}?locale=${navigator.language}&${type}=${term}`)
+	fetch(`${url}?locale=${lang}&${type}=${term}`)
 		.then((res) => res.json())
 		.then((r) => (list.innerHTML = r.map((r) => recipe(r)).join("\n")));
 	return true;
 }
-
-window.onload = getMostSeen;
 
 // For testing
 // const r = [
