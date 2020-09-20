@@ -71,6 +71,7 @@ section.main {
 #list {
   list-style-type: none;
   display: block;
+  white-space: nowrap;
 }
 
 li.list {
