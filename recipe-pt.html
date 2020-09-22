@@ -16,6 +16,7 @@
       content="app, feita em casa, android, iOS, receita, busca"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="search.js"></script>
   </head>
   <body>
     <nav>
@@ -33,27 +34,30 @@
       banner.src = data.Picture;
 
       recipe.innerHTML = `<h1>${data.Title}</h1>
-            <h2>Autor</h2>
-            <p>${data.Author}</p>
-            <h2>Ingredientes</h2>
-            <ul>
-            ${data.Ingredients.map((i) => "<li>" + i + "</li>").join("\n")}
-            </ul>
-            <h2>Instruções</h2>
-            <ul>
-            ${data.Instructions.map((i) => "<li>" + i + "</li>").join("\n")}
-            </ul>
-        `;
+        <h2>Autor</h2>
+        <p>${data.Author}</p>
+        <h2>Ingredientes</h2>
+        <ul>
+        ${data.Ingredients.map((i) => "<li>" + i + "</li>").join("\n")}
+        </ul>
+        <h2>Instruções</h2>
+        <ul>
+        ${data.Instructions.map((i) => "<li>" + i + "</li>").join("\n")}
+        </ul>
+      `;
 
       if (data.Notes.length > 0) {
         recipe.innerHTML += `<h2>Notas</h2>
-            <ul>
-                ${data.Notes.map((n) => "<li>" + n + "</li>").join("\n")}
-            </ul>`;
+          <ul>
+            ${data.Notes.map((n) => "<li>" + n + "</li>").join("\n")}
+          </ul>`;
       }
       recipe.innerHTML += `<h2>Fonte</h2>
-            <p>${data.Source}</p>
-        `;
+        <p>${data.Source}</p>
+      `;
+
+      // Update count
+      fetch(url + "?locale=pt&recipe=" + data.Title, { method: "PATCH" })
     </script>
   </body>
 </html>
