@@ -27,13 +27,13 @@
     <div id="recipe"></div>
 
     <script>
-      let recipe = document.getElementById("recipe");
+      let r = document.getElementById("recipe");
       let banner = document.getElementById("banner");
       const data = JSON.parse(decodeURI(document.location.search.substr(6)));
 
       banner.src = data.Picture;
 
-      recipe.innerHTML = `<h1>${data.Title}</h1>
+      r.innerHTML = `<h1>${data.Title}</h1>
         <h2>Autor</h2>
         <p>${data.Author}</p>
         <h2>Ingredientes</h2>
@@ -47,12 +47,12 @@
       `;
 
       if (data.Notes.length > 0) {
-        recipe.innerHTML += `<h2>Notas</h2>
+        r.innerHTML += `<h2>Notas</h2>
           <ul>
             ${data.Notes.map((n) => "<li>" + n + "</li>").join("\n")}
           </ul>`;
       }
-      recipe.innerHTML += `<h2>Fonte</h2>
+      r.innerHTML += `<h2>Fonte</h2>
         <p>${data.Source}</p>
       `;
 
