@@ -1,78 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
   <head>
     <link rel="stylesheet" href="main.css" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <title>Feita em casa</title>
+    <title>Homemade recipes</title>
 
     <meta charset="UTF-8" />
-    <meta name="language" content="portuguese" />
+    <meta name="language" content="english" />
     <meta name="author" content="Brian Lee Mayer" />
     <meta
       name="description"
-      content="Feita em casa é o app ideal para você encontrar sua receita"
+      content="Homemade recipes is the perfect app for finding your recipe"
     />
     <meta
       name="keywords"
-      content="app, feita em casa, android, iOS, receita, busca"
+      content="app, homemade recipes, android, iOS, recipe, search"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="search.js"></script>
   </head>
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="hints.html">Dicas</a>
-    </nav>
-
-    <img class="banner" src="images/feature_graphic_pt.jpeg" />
-
-    <blockquote>
-      Um app onde você busca receitas pelos ingredientes ou por nome, ao
-      favoritar uma receita ela se torna disponível offline. Deixe sua vida mais
-      fácil por utilizar or ingredientes que você já tem em casa.
-    </blockquote>
-
-    <section class="main">
-      <a
-        href="https://play.google.com/store/apps/details?id=br.com.feitaemcasa"
-      >
-        <img
-          width="140px"
-          alt="Get it on Google Play"
-          src="images/google-play.png"
+    <a href="web-pt.html">🇧🇷</a>
+    <div class="search">
+      <form>
+        <input
+          type="text"
+          placeholder="Search"
+          id="search"
+          onsubmit="searchTerm('en');"
         />
-      </a>
-      <a href="https://apps.apple.com/us/app/feita-em-casa/id1529540506?mt=8">
-        <img
-          width="140px"
-          alt="Get it on App Store"
-          src="images/app-store.svg"
-        />
-      </a>
-
-      <a href="web-pt.html"><button>Versão Web</button></a>
-
-    </section>
-
-    <hr>
-
-    <section class="main">
-      <img src="images/image-2.jpeg" width="200px" alt="screen-shot2">
-      <img src="images/image-3.jpeg" width="200px" alt="screen-shot3">
-      <img src="images/image-1.jpeg" width="200px" alt="screen-shot1">
-      <img src="images/image-5.jpeg" width="200px" alt="screen-shot5">
-    </section>
-
-	<hr>
-    <footer>
+        <input type="button" value="Search" onclick="searchTerm('en');" />
+      </form>
       <p>
-        Esta página feita por Brian Mayer está licenciada sob
-        <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+        <input checked type="radio" name="type" />
+        <label for="byingredient">By ingredient</label>
+        <input type="radio" name="type" />
+        <label for="byname">By name</label>
       </p>
-      <p>
-        <img style="height: 22px" src="images/cc.svg" />
-        <img style="height: 22px" src="images/by.svg" />
-      </p>
-    </footer>
+    </div>
+
+    <ul id="list"></ul>
+
+    <script>
+      getMostSeen("en");
+    </script>
   </body>
 </html>
