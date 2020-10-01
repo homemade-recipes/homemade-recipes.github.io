@@ -9,31 +9,10 @@ a {
   text-decoration: none;
 }
 
-nav {
-  background-color: #e52567;
-  font-size: large;
-}
-
-nav > a {
-  margin: 0 20px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
-
-button {
-  color: white;
-  font-weight: bold;
-  width: 140px;
-  padding: 11px 16px;
-  background-color: black;
-  border: 1px solid gray;
-  border-radius: 6px;
-}
-
 .banner {
   width: 100%;
   max-width: 800px;
+  margin-top: 20px;
 }
 
 .search {
@@ -62,12 +41,6 @@ input[type="button"] {
   border-color: #e52567;
 }
 
-section.main {
-  margin: 0 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
 #list {
   list-style-type: none;
   display: block;
@@ -77,11 +50,6 @@ section.main {
 li.list {
   display: flex;
   padding-bottom: 30px;
-}
-
-desc {
-  margin-left: 120px;
-  display: block;
 }
 
 img.recipe {
