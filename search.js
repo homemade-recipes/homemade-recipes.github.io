@@ -4,6 +4,7 @@ function recipe(lang, r, fav) {
 	const by = lang == "en" ? "By" : "Por";
 	const on = lang == "en" ? "In" : "Em";
 	const suffix = lang == "en" ? "" : "-pt";
+	const heart = fav === true ? "♥️" : "🤍"
 	return `<li class="list">
 		<div>
 			<img class="list" src="${r.Picture}"/>
@@ -18,7 +19,7 @@ function recipe(lang, r, fav) {
 			</div>
 		</div>
 		<button id="${r.Title}" class="fav" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
-			${fav === true ? "♥️" : "🤍" }
+			${heart}
 		</button>
 	</li>`;
 }
