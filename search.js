@@ -16,7 +16,7 @@ function recipe(lang, r, fav) {
 	    <div>
 	      ${on}: ${r.Category}
 	    </div>
-		<button id="${r.Title}" style="flex: 100%" onclick="toggleFav('${r.Title}','${JSON.stringify(r)}')">
+		<button id="${r.Title}" style="flex: 100%" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
 			${fav ? "♥️" : "🤍" }
 		</button>
 	  </div>
@@ -38,7 +38,7 @@ function getFavorites(lang) {
 	let list = document.getElementById("favorites-list");
 	for (let i = 0; i < localStorage.length; i++) {
 		const r = localStorage.getItem(localStorage.key(i));
-		list.innerHTML += recipe(lang, JSON.parse(r), true).join("\n");		
+		list.innerHTML += recipe(lang, JSON.parse(decodeURI(r)), true).join("\n");		
 	}
 }
 
