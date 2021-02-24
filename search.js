@@ -52,7 +52,7 @@ function getMostSeen(lang) {
 	.then((r) => {
 		list.innerHTML = r.map((r) => {
 			let isFav = localStorage.getItem(r.Title) !== null;
-			recipe(lang, r, isFav);
+			return recipe(lang, r, isFav);
 		}).join("\n");
 	});
 }
