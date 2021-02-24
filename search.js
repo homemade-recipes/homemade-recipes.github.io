@@ -50,10 +50,10 @@ function getMostSeen(lang) {
 	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
 	.then((r) => {
-		r.map((r) => {
+		list.innerHTML = r.map((r) => {
 			let isFav = localStorage.getItem(r.Title) !== null;
-			list.innerHTML += recipe(lang, r, isFav);
-		});
+			recipe(lang, r, isFav);
+		}).join("\n");
 	});
 }
 
