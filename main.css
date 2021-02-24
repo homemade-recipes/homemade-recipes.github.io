@@ -66,3 +66,8 @@ img.list {
   float: left;
   margin-right: 20px;
 }
+
+button.fav {
+  border-width: 0px;
+  float: right;
+}
