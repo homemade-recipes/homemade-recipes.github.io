@@ -5,21 +5,21 @@ function recipe(lang, r, fav) {
 	const on = lang == "en" ? "In" : "Em";
 	const suffix = lang == "en" ? "" : "-pt";
 	return `<li class="list">
-	  <div>
-	    <img class="list" src="${r.Picture}"/>
-	    <a href="recipe${suffix}.html?data=${encodeURI(JSON.stringify(r))}">${
-		    r.Title
-	    }</a>
-	    <div>
-	      ${by}: ${r.Author}
-	    </div>
-	    <div>
-	      ${on}: ${r.Category}
-	    </div>
+		<div>
+			<img class="list" src="${r.Picture}"/>
+			<a href="recipe${suffix}.html?data=${encodeURI(JSON.stringify(r))}">${
+				r.Title
+			}</a>
+			<div>
+			${by}: ${r.Author}
+			</div>
+			<div>
+			${on}: ${r.Category}
+			</div>
+		</div>
 		<button id="${r.Title}" class="fav" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
 			${fav ? "♥️" : "🤍" }
 		</button>
-	  </div>
 	</li>`;
 }
 
