@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+}
+
 .banner {
   width: 100%;
   max-width: 800px;
