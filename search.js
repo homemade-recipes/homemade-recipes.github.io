@@ -38,7 +38,7 @@ function getFavorites(lang) {
 	let list = document.getElementById("favorites-list");
 	for (let i = 0; i < localStorage.length; i++) {
 		const r = localStorage.getItem(localStorage.key(i));
-		list.innerHTML += recipe(lang, JSON.parse(decodeURI(r)), true).join("\n");		
+		list.innerHTML += recipe(lang, JSON.parse(decodeURI(r)), false).join("\n");		
 	}
 }
 
