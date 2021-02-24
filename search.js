@@ -52,7 +52,6 @@ function getMostSeen(lang) {
 	.then((r) => {
 		list.innerHTML = r.map((r) => {
 			let isFav = localStorage.getItem(r.Title) !== null;
-			console.log(r.Title, isFav);
 			recipe(lang, r, isFav);
 		});
 	});
