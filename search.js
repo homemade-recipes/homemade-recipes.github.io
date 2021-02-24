@@ -25,7 +25,7 @@ function recipe(lang, r, fav) {
 
 function toggleFav(title, r) {
 	let button = document.getElementById(title);
-	
+
 	if (localStorage.getItem(title)) {
 		localStorage.removeItem(title);
 		button.innerText = "🤍";
@@ -49,7 +49,7 @@ function getMostSeen(lang) {
 	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
 	.then((r) => {
-		let isFav = localStorage.getItem(r.Title) === null;
+		const isFav = localStorage.getItem(r.Title) !== null;
 		list.innerHTML = r.map((r) => recipe(lang, r, isFav)).join("\n")
 	});
 }
