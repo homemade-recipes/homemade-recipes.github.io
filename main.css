@@ -11,6 +11,7 @@ a {
 
 header {
   display: flex;
+  justify-content: space-between;
 }
 
 .banner {
@@ -53,12 +54,8 @@ input[type="button"] {
 
 li.list {
   display: flex;
+  justify-content: space-between;
   padding-bottom: 30px;
-}
-
-img.recipe {
-  width: 100px;
-  float: left;
 }
 
 img.list {
@@ -69,6 +66,9 @@ img.list {
 
 button.fav {
   border-width: 0px;
-  float: right;
   background-color: transparent;
+}
+
+button.fav:hover {
+  cursor: pointer;
 }
