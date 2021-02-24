@@ -12,10 +12,10 @@ function recipe(lang, r, fav) {
 				r.Title
 			}</a>
 			<div>
-			${by}: ${r.Author}
+				${by}: ${r.Author}
 			</div>
 			<div>
-			${on}: ${r.Category}
+				${on}: ${r.Category}
 			</div>
 		</div>
 		<button id="${r.Title}" class="fav" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
@@ -74,7 +74,7 @@ function searchTerm(lang) {
 // For testing
 // const r = [
 //   {
-//     URL:
+//     Picture:
 //       "https://www.bbc.co.uk/food/recipes/1_creamy_chicken_pasta_24218",
 //     Category: "Recipes",
 //     Picture:
@@ -106,7 +106,7 @@ function searchTerm(lang) {
 //     Visits: 0,
 //   },
 //   {
-//     URL: "https://www.bbc.co.uk/food/recipes/amarettibistcuits_67183",
+//     Picture: "https://www.bbc.co.uk/food/recipes/amarettibistcuits_67183",
 //     Category: "Recipes",
 //     Picture:
 //       "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/amarettibistcuits_67183_16x9.jpg",
@@ -130,7 +130,7 @@ function searchTerm(lang) {
 //     Visits: 0,
 //   },
 //   {
-//     URL: "https://www.bbc.co.uk/food/recipes/all-in-one_rib_roast_75464",
+//     Picture: "https://www.bbc.co.uk/food/recipes/all-in-one_rib_roast_75464",
 //     Category: "Recipes",
 //     Picture:
 //       "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/all-in-one_rib_roast_75464_16x9.jpg",
@@ -164,69 +164,70 @@ function searchTerm(lang) {
 //     Visits: 0,
 //   },
 //   {
-//     URL: "https://www.bbc.co.uk/food/recipes/americanbakedcheesec_8358",
+//     Picture: "https://www.bbc.co.uk/food/recipes/americanbakedcheesec_8358",
 //     Category: "Recipes",
 //     Picture:
 //       "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/americanbakedcheesec_8358_16x9.jpg",
-	//     Title: "American baked cheesecake",
+// 	    Title: "American baked cheesecake",
 //     Language: "en",
 //     Author: "James Martin",
-	//     Source: "BBC",
-	//     Ingredients: [
-	//       "25cm/10in sponge (cut from a large bought flan case)",
-	//       "200g/7oz caster sugar",
-	//       "finely grated zest of 3 lemons",
+// 	    Source: "BBC",
+// 	    Ingredients: [
+// 	      "25cm/10in sponge (cut from a large bought flan case)",
+// 	      "200g/7oz caster sugar",
+// 	      "finely grated zest of 3 lemons",
 //       "4 tbsp cornflour",
-	//       "3 tbsp sultanas, soaked in a bit of bourbon",
-	//       "845g/29¾oz full fat soft cream cheese",
-	//       "3 medium eggs",
-	//       "7.5ml/1½ tsp vanilla essence",
-	//       "1 vanilla pod",
-	//       "Jack Daniels to taste or bourbon (optional)",
-	//       "375ml/12½fl oz double or single cream",
-	//       "10 small bananas",
-	//       "25g/1oz butter",
-	//       "2 tbsp sugar",
+// 	      "3 tbsp sultanas, soaked in a bit of bourbon",
+// 	      "845g/29¾oz full fat soft cream cheese",
+// 	      "3 medium eggs",
+// 	      "7.5ml/1½ tsp vanilla essence",
+// 	      "1 vanilla pod",
+// 	      "Jack Daniels to taste or bourbon (optional)",
+// 	      "375ml/12½fl oz double or single cream",
+// 	      "10 small bananas",
+// 	      "25g/1oz butter",
+// 	      "2 tbsp sugar",
 //       "caramel sauce or maple syrup",
-	//       "sprig of mint or basil",
-	//     ],
-	//     Instructions: [
-	//       "Preheat the oven to 180C/350F/Gas 4. Butter a 25cm/10in loose-bottomed cake tin.",
-	//       "Cut the sponge horizontally into 2 discs. Use one to line a buttered cake tin.",
-	//       "In a bowl mix together the sugar, lemon zest, cornflour and sultanas using a wooden spoon, then beat in the cream cheese. Add the eggs one by one, also add the vanilla essence, beating constantly until all the eggs are well incorporated.",
-	//       "Slice open the vanilla pod, remove the seeds with a sharp knife and place the seeds into the cream mixture, add a splash of bourbon (about 4 tbsp), if using, and mix everything together well. Add the cream and beat well until the mixture is smooth. Pour gently over the sponge base in the cake tin.",
-	//       "Sit the tin in a baking tray filled with 2-3mm of warm water to help create steam during cooking. Place into the preheated oven and bake for 50 minutes until the top is golden. Remove from the oven and leave to cool and set completely before removing from the tin.",
-	//       "Just before serving, peel the bananas and pan fry in the butter and sugar until brown and slightly caramelised.",
-	//       "Serve, cut into wedges, with the bananas and a drizzle of caramel sauce or maple syrup.",
+// 	      "sprig of mint or basil",
+// 	    ],
+// 	    Instructions: [
+// 	      "Preheat the oven to 180C/350F/Gas 4. Butter a 25cm/10in loose-bottomed cake tin.",
+// 	      "Cut the sponge horizontally into 2 discs. Use one to line a buttered cake tin.",
+// 	      "In a bowl mix together the sugar, lemon zest, cornflour and sultanas using a wooden spoon, then beat in the cream cheese. Add the eggs one by one, also add the vanilla essence, beating constantly until all the eggs are well incorporated.",
+// 	      "Slice open the vanilla pod, remove the seeds with a sharp knife and place the seeds into the cream mixture, add a splash of bourbon (about 4 tbsp), if using, and mix everything together well. Add the cream and beat well until the mixture is smooth. Pour gently over the sponge base in the cake tin.",
+// 	      "Sit the tin in a baking tray filled with 2-3mm of warm water to help create steam during cooking. Place into the preheated oven and bake for 50 minutes until the top is golden. Remove from the oven and leave to cool and set completely before removing from the tin.",
+// 	      "Just before serving, peel the bananas and pan fry in the butter and sugar until brown and slightly caramelised.",
+// 	      "Serve, cut into wedges, with the bananas and a drizzle of caramel sauce or maple syrup.",
 //     ],
 //     Notes: [],
-	//     Visits: 0,
-	//   },
+// 	    Visits: 0,
+// 	  },
 //   {
-//     URL:
-	//       "https://www.bbc.co.uk/food/recipes/ajitsuke_tamago_japanese_65686",
-	//     Category: "Recipes",
-	//     Picture: "https://ichef.bbci.co.uk/images/ic/832xn/p01t7ptb.jpg",
+//     Picture:
+// 	      "https://www.bbc.co.uk/food/recipes/ajitsuke_tamago_japanese_65686",
+// 	    Category: "Recipes",
+// 	    Picture: "https://ichef.bbci.co.uk/images/ic/832xn/p01t7ptb.jpg",
 //     Title: "Ajitsuke tamago (Japanese pickled eggs)",
-	//     Language: "en",
-	//     Author: "The Hairy Bikers",
-	//     Source: "BBC",
-	//     Ingredients: [
-	//       "6 large free-range eggs",
-	//       "100ml/3½fl oz light soy sauce",
+// 	    Language: "en",
+// 	    Author: "The Hairy Bikers",
+// 	    Source: "BBC",
+// 	    Ingredients: [
+// 	      "6 large free-range eggs",
+// 	      "100ml/3½fl oz light soy sauce",
 //       "100ml/3½fl oz mirin",
-	//       "100ml/3½fl oz sake",
-	//       "6 tbsp caster sugar",
-	//     ],
-	//     Instructions: [
-	//       "Three-quarters fill a medium saucepan with water and bring to the boil. Once boiling, carefully add the eggs to the pan and boil for exactly six minutes. Use a timer as the eggs want to be just perfect with a lovely runny yolk.",
-	//       "Once cooked, transfer to a bowl of iced-cold water and carefully peel. Be aware that the eggs are still runny and that you need to handle with care. Add the remaining ingredients, including 100ml/3½fl oz water to another saucepan, gently bring to a simmer and cook until the sugar is dissolved. Remove from the heat and leave to cool.",
-	//       "Place the eggs in a small container that will fit neatly as you want the liquid to nearly cover the eggs. Pour in the cold marinade and place a small piece of muslin or a jay cloth over the eggs - this helps to make sure the eggs get an even coating of the marinade as the liquid will soak in to the material as well as weighing the eggs down in the liquid.",
+// 	      "100ml/3½fl oz sake",
+// 	      "6 tbsp caster sugar",
+// 	    ],
+// 	    Instructions: [
+// 	      "Three-quarters fill a medium saucepan with water and bring to the boil. Once boiling, carefully add the eggs to the pan and boil for exactly six minutes. Use a timer as the eggs want to be just perfect with a lovely runny yolk.",
+// 	      "Once cooked, transfer to a bowl of iced-cold water and carefully peel. Be aware that the eggs are still runny and that you need to handle with care. Add the remaining ingredients, including 100ml/3½fl oz water to another saucepan, gently bring to a simmer and cook until the sugar is dissolved. Remove from the heat and leave to cool.",
+// 	      "Place the eggs in a small container that will fit neatly as you want the liquid to nearly cover the eggs. Pour in the cold marinade and place a small piece of muslin or a jay cloth over the eggs - this helps to make sure the eggs get an even coating of the marinade as the liquid will soak in to the material as well as weighing the eggs down in the liquid.",
 //       "Marinate for at least 12 hours, but ideally 24.",
 //     ],
-	//     Notes: [],
-	//     Visits: 0,
+// 	    Notes: [],
+// 	    Visits: 0,
 //   },
 // ];
-// list.innerHTML = r.map((r) => recipe(r)).join("\n");
-
+// let list = document.getElementById("list");
+// console.log("list", list);
+// list.innerHTML = r.map((i) => recipe("en", i, false)).join("\n");
