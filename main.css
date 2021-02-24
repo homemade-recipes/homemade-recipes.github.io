@@ -70,4 +70,5 @@ img.list {
 button.fav {
   border-width: 0px;
   float: right;
+  background-color: transparent;
 }
