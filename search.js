@@ -4,7 +4,7 @@ function recipe(lang, r, fav) {
 	const by = lang == "en" ? "By" : "Por";
 	const on = lang == "en" ? "In" : "Em";
 	const suffix = lang == "en" ? "" : "-pt";
-	const heart = fav === true ? "♥️" : "🤍"
+	const heart = fav === true ? "♥️" : "🤍";
 	return `<li class="list">
 		<div>
 			<img class="list" src="${r.Picture}"/>
@@ -50,8 +50,10 @@ function getMostSeen(lang) {
 	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
 	.then((r) => {
-		let isFav = localStorage.getItem(r.Title) !== null;
-		list.innerHTML = r.map((r) => recipe(lang, r, isFav)).join("\n")
+		list.innerHTML = r.map((r) => {
+			let isFav = localStorage.getItem(r.Title) !== null;
+			recipe(lang, r, isFav);
+		});
 	});
 }
 
@@ -230,4 +232,8 @@ function searchTerm(lang) {
 // ];
 // let list = document.getElementById("list");
 // console.log("list", list);
-// list.innerHTML = r.map((i) => recipe("en", i, false)).join("\n");
+//  r.map((i) => {
+// 	let isFav = localStorage.getItem(i.Title) !== null;
+// 	console.log(i.Title, isFav);
+// 	list.innerHTML += recipe("en", i, isFav);
+//  });
