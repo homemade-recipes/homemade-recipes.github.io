@@ -50,6 +50,7 @@ input[type="button"] {
   list-style-type: none;
   display: block;
   white-space: nowrap;
+  padding-right: 40px;
 }
 
 li.list {
