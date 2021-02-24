@@ -16,7 +16,7 @@ function recipe(lang, r, fav) {
 	    <div>
 	      ${on}: ${r.Category}
 	    </div>
-		<button id="${r.Title}" style="flex: 100%" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
+		<button id="${r.Title}" class="fav" onclick="toggleFav('${r.Title}','${encodeURI(JSON.stringify(r))}')">
 			${fav ? "♥️" : "🤍" }
 		</button>
 	  </div>
