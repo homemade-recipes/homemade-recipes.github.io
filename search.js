@@ -1,6 +1,6 @@
 const url = "https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod";
 
-function recipe(lang, r) {
+function recipe(lang, r, fav) {
 	const by = lang == "en" ? "By" : "Por";
 	const on = lang == "en" ? "In" : "Em";
 	const suffix = lang == "en" ? "" : "-pt";
@@ -16,8 +16,30 @@ function recipe(lang, r) {
 	    <div>
 	      ${on}: ${r.Category}
 	    </div>
+		<button id="${r.Title}" style="flex: 100%" onclick="toggleFav('${r.Title}','${JSON.stringify(r)}')">
+			${fav ? "♥️" : "🤍" }
+		</button>
 	  </div>
 	</li>`;
+}
+
+function toggleFav(title, r) {
+	if (localStorage.getItem(title)) {
+		localStorage.removeItem(title);
+		let button = document.getElementById(title);
+		button.innerText = "🤍";
+	} else {
+		localStorage.setItem(title, r);
+		button.innerText = "♥️";
+	}
+}
+
+function getFavorites(lang) {
+	let list = document.getElementById("favorites-list");
+	for (let i = 0; i < localStorage.length; i++) {
+		const r = localStorage.getItem(localStorage.key(i));
+		list.innerHTML += recipe(lang, JSON.parse(r), true).join("\n");		
+	}
 }
 
 function getMostSeen(lang) {
@@ -25,7 +47,10 @@ function getMostSeen(lang) {
 	
 	fetch(url + "?locale=" + lang + "&mostvisited")
 	.then((res) => res.json())
-	.then((r) => (list.innerHTML = r.map((r) => recipe(lang, r)).join("\n")));
+	.then((r) => {
+		const isFav = localStorage.getItem(r.Title) === null;
+		list.innerHTML = r.map((r) => recipe(lang, r, isFav)).join("\n")
+	});
 }
 
 function searchTerm(lang) {
