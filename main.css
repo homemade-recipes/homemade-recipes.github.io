@@ -27,21 +27,21 @@ header {
   align-items: center;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
   width: 300px;
   padding: 6px 12px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 14px;
   border-width: 1px;
 }
 
-input[type="button"] {
+input[type="button"], input[type="submit"] {
   width: fit-content;
   background-color: #e52567;
   color: white;
   padding: 6px 12px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 14px;
   border-width: 1px;
   border-color: #e52567;
 }
