@@ -23,23 +23,32 @@
     </header>
     <form action="https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod?locale=pt" method="POST" enctype="multipart/form-data">
       <h1>Foto</h1>
-      <input type="file" id="picture" name="picture" accept="image/*">
+      <input type="file" name="picture" accept="image/*" required>
 
       <h1>Autor(a)</h1>
-      <input type="text" id="author" name="author" placeholder="Seu nome">
+      <input type="text" name="author" placeholder="Seu nome" required>
 
       <h1>Categoria</h1>
-      <input type="text" id="category" name="category" placeholder="Categoria">
+      <input type="text" name="category" placeholder="Categoria" required>
 
       <h1>Título</h1>
-      <input type="text" id="title" name="title" placeholder="Nome da receita">
+      <input type="text" name="title" placeholder="Nome da receita" required>
+      
+      <h1>Tempo de preparo</h1>
+      <input type="text" name="time" placeholder="2 horas" required>
+
+      <h1>Rendimento</h1>
+      <input type="text" name="servings" placeholder="4 pessoas" required>
 
       <h1>Ingredientes</h1>
       <textarea name="ingredients" rows="10" cols="40" placeholder="- um ingrediente por linha"></textarea>
 
       <h1>Modo de Preparo</h1>
-      <textarea name="instructions" rows="10" cols="40" placeholder="- uma instrução por linha"></textarea><br>
+      <textarea name="instructions" rows="10" cols="40" placeholder="- uma instrução por linha"></textarea>
 
+      <h1>Notas (opcional)</h1>
+      <textarea name="instructions" rows="10" cols="40" placeholder="- uma nota por linha"></textarea><br>
+      
       <input type="submit" value="Enviar"></button>
     </form>
   </body>

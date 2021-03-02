@@ -23,22 +23,31 @@
     </header>
     <form action="https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod?locale=en" method="POST" enctype="multipart/form-data">
       <h1>Picture</h1>
-      <input type="file" id="picture" name="picture" accept="image/*">
+      <input type="file" id="picture" name="picture" accept="image/*" required>
 
       <h1>Author</h1>
-      <input type="text" id="author" name="author" placeholder="Your name">
+      <input type="text" id="author" name="author" placeholder="Your name" required>
 
       <h1>Category</h1>
-      <input type="text" id="category" name="category" placeholder="Category">
+      <input type="text" id="category" name="category" placeholder="Category" required>
 
       <h1>Title</h1>
-      <input type="text" id="title" name="title" placeholder="Recipe name">
+      <input type="text" id="title" name="title" placeholder="Recipe name" required>
+
+      <h1>Preparation time</h1>
+      <input type="text" name="time" placeholder="2 hours" required>
+
+      <h1>Servings</h1>
+      <input type="text" name="servings" placeholder="4 people" required>
 
       <h1>Ingredients</h1>
       <textarea name="ingredients" rows="10" cols="40" placeholder="- one ingredient per line"></textarea>
 
       <h1>Instructions</h1>
-      <textarea name="instructions" rows="10" cols="40" placeholder="- one instruction per line"></textarea><br>
+      <textarea name="instructions" rows="10" cols="40" placeholder="- one instruction per line"></textarea>
+
+      <h1>Notes (optional)</h1>
+      <textarea name="instructions" rows="10" cols="40" placeholder="- one note per line"></textarea><br>
 
       <input type="submit" value="Send"></button>
     </form>
