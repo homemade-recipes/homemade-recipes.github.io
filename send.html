@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <title>Feita em casa</title>
+
+    <meta charset="UTF-8" />
+    <meta name="language" content="portuguese" />
+    <meta name="author" content="Brian Lee Mayer" />
+    <meta
+      name="description"
+      content="Feita em casa é o app ideal para você encontrar sua receita"
+    />
+    <meta
+      name="keywords"
+      content="app, feita em casa, android, iOS, receita, busca"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <a href="send-pt.html">🇧🇷</a>
+    </header>
+    <form action="https://ltrq36z7g9.execute-api.sa-east-1.amazonaws.com/prod?locale=en" method="POST" enctype="multipart/form-data">
+      <h1>Picture</h1>
+      <input type="file" id="picture" name="picture" accept="image/*">
+
+      <h1>Author</h1>
+      <input type="text" id="author" name="author" placeholder="Your name">
+
+      <h1>Category</h1>
+      <input type="text" id="category" name="category" placeholder="Category">
+
+      <h1>Title</h1>
+      <input type="text" id="title" name="title" placeholder="Recipe name">
+
+      <h1>Ingredients</h1>
+      <textarea name="ingredients" rows="10" cols="40" placeholder="- one ingredient per line"></textarea>
+
+      <h1>Instructions</h1>
+      <textarea name="instructions" rows="10" cols="40" placeholder="- one instruction per line"></textarea><br>
+
+      <input type="submit" value="Send"></button>
+    </form>
+  </body>
+</html>
