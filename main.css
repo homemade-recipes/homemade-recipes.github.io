@@ -46,6 +46,10 @@ input[type="button"], input[type="submit"] {
   border-color: #e52567;
 }
 
+input:focus {
+  border-radius: 14px;
+}
+
 #list {
   list-style-type: none;
   display: block;
